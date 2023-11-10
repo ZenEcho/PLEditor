@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML在线编辑器,Markdown在线编辑-盘络文档</title>
+    <meta name="keywords" content="Markdown在线编辑,html在线编辑器,富文本编辑器,mk编辑器,在线编辑,匿名编辑器,在线编辑器" />
+    <meta name="description" content="盘络文档是一款html/Markdown的在线编辑器，支持实时预览，支持Markdown语法。无网络存储" />
+    <script src="resource/js/tinymce/tinymce.min.js"></script>
+    <script src="resource/js/marked/marked.min.js"></script>
+    <link rel="shortcut icon" href="https://cdn-us.imgs.moe/2023/10/11/yyl_128_8n1OFX5oOT.png" type="image/x-icon">
+    <link rel="stylesheet" href="resource/css/index.css">
+    <script src="resource/js/main/index.js"></script>
+</head>
+
+<body>
+
+    <div class="toggle-switch">
+        <div id="slider"></div>
+        <button class="toggle-switch-button" type="button" value="default" name="editor-mode">Default 模式</button>
+        <button class="toggle-switch-button" type="button" value="markdown" name="editor-mode">Markdown 模式</button>
+    </div>
+
+
+    <form method="post" class="editorForm">
+        <textarea id="editor"></textarea>
+    </form>
+
+    <div id="popup-container">
+
+        <div id="popup-icon">设置</div>
+
+        <div id="popup-item">
+            <div id="popup">
+                <div class="config">
+                    <span style="border-bottom: 2px solid #999;">预览窗口设置</span>
+                    <label><input type="checkbox" id="openNewPreview"> 弹出新窗口</label>
+                    <label><input type="checkbox" id="previewUpdate" disabled> 窗口实时更新</label>
+                    <hr>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="resource/js/main/popup.js"></script>
+</body>
+
+</html>

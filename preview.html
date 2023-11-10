@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>预览</title>
+    <link rel="shortcut icon" href="https://cdn-us.imgs.moe/2023/10/11/yyl_128_8n1OFX5oOT.png" type="image/x-icon">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: auto;
+        }
+
+        .preview {
+            padding: 0 16px;
+        }
+    </style>
+    <link rel="stylesheet" href="resource/css/preview.css">
+</head>
+
+<body>
+    <div class="preview"></div>
+    <script>
+        window.addEventListener('DOMContentLoaded', (event) => {
+            const htmlContent = localStorage.getItem('previewHTML');
+            document.getElementsByClassName('preview')[0].innerHTML = htmlContent
+            localStorage.removeItem('previewHTML');
+            // wrapCodeWithLi(document.querySelector("code"));
+        })
+        window.addEventListener('storage', function (e) {
+            if (e.key === 'previewHTML') {
+                // // 更新预览区域的内容
+                const editorContent = e.newValue;
+                document.getElementsByClassName('preview')[0].innerHTML = editorContent
+                // wrapCodeWithLi(document.querySelector("code"));
+            }
+        });
+
+
+        // 定义一个函数，接受一个 code 元素作为参数
+        function wrapCodeWithLi(code) {
+            if (!code) {
+                return;
+            }
+            let codeText = code.textContent;
+            // codeText = codeText.trim();
+            let codeLines = codeText.split("\n");
+            let ul = document.createElement("ol");
+            let lastLineEmpty = false;
+            for (let i = 0; i < codeLines.length; i++) {
+                let line = codeLines[i];
+                let currentLineEmpty = line === "";
+                if (currentLineEmpty) {
+                    continue;
+                }
+                let li = document.createElement("li");
+                li.textContent = line;
+                ul.appendChild(li);
+                lastLineEmpty = currentLineEmpty;
+            };
+            code.parentNode.replaceChild(ul, code);
+        };
+
+
+
+    </script>
+
+</body>
+
+
+</html>
