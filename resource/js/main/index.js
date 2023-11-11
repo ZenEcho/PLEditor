@@ -11,14 +11,14 @@ document.addEventListener("DOMContentLoaded", function () {
         menu: {
             file: { title: 'File', items: 'newdocument restoredraft | preview | export print | deleteallconversations' },
             edit: { title: 'Edit', items: 'undo redo | cut copy paste pastetext | selectall | searchreplace' },
-            view: { title: 'View', items: 'code | visualaid visualchars visualblocks | spellchecker | preview newwindowpreview fullscreen | showcomments' },
+            view: { title: 'View', items: 'code | visualaid visualchars visualblocks | spellchecker | preview windowpreview fullscreen | showcomments' },
             insert: { title: 'Insert', items: 'image link media addcomment pageembed template codesample inserttable | charmap emoticons hr | pagebreak nonbreaking anchor tableofcontents | insertdatetime' },
             format: { title: 'Format', items: 'bold italic underline strikethrough superscript subscript codeformat | styles blocks fontfamily fontsize align lineheight | forecolor backcolor | language | removeformat' },
             tools: { title: 'Tools', items: 'spellchecker spellcheckerlanguage | a11ycheck code wordcount' },
             table: { title: 'Table', items: 'inserttable | cell row column | advtablesort | tableprops deletetable' },
         },
         draggable_modal: true,
-        plugins: 'newwindowpreview quickbars formatpainter preview searchreplace autolink directionality visualblocks visualchars fullscreen image link media code codesample table charmap pagebreak nonbreaking anchor insertdatetime advlist lists wordcount emoticons autosave  autoresize',
+        plugins: 'windowpreview quickbars formatpainter preview searchreplace autolink directionality visualblocks visualchars fullscreen image link media code codesample table charmap pagebreak nonbreaking anchor insertdatetime advlist lists wordcount emoticons autosave  autoresize',
         content_css: "resource/css/content.css",
         toolbar: [
             "code restoredraft undo redo |bold italic underline strikethrough hr insertdatetime removeformat |link image media |indent outdent alignjustify align lineheight bullist numlist|charmap emoticons  preview",
